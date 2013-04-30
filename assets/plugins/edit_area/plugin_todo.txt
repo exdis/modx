@@ -1,0 +1,8 @@
+@todo
+        - Add highlighting for MODx-style tags (NOTE: Tagging syntax to change in future MODx release)
+        - Add a loading or working sign when editarea is loading
+        - Change Cookie management ie Serialization & Domain
+        - Deactivate single quotes in HTML syntax !?
+        - Clean the heavy trace 
+        - Add a way to let user define their own hot-keys
+        - Add support for unknown file extension in FileManager

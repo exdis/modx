@@ -1,0 +1,6 @@
+@bugs
+	- is_multi_file is breaking the editor (no scroll bars, failure rendering, etc) when within MODx
+	- Some minor JS Warnings with IE6 in "Debug Mode" : Try to close the window, change the active tab
+	- In edit_area_compressor.php the 1st compression REGEX Crash on windows PHP 5.1.4 PCRE 6.6 06-Feb-2006
+	- MSIE filter in edit_area_compressor.php is too restrictive
+	- Some minor JS Warnings with IE6 in "Debug Mode" : Try to close the window, change the active tab

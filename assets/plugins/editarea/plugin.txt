@@ -1,0 +1,45 @@
+﻿/*	EVENTS
+	OnRichTextEditorRegister
+	OnRichTextEditorInit
+	OnChunkFormPrerender
+	OnSnipFormRender
+	OnPluginFormRender
+	OnTempFormRender
+*/
+$e = &$modx->Event; 
+switch ($e->name) { 
+	case "OnRichTextEditorRegister":
+		$e->output("EditArea");
+		break;
+
+	case "OnRichTextEditorInit": 
+		if($editor=="EditArea") {
+			$e->output('<script type="text/javascript" src="'.$modx->config['base_url'].'assets/plugins/editarea/edit_area/edit_area_full.js"></script>');
+			$e->output('<script type="text/javascript" src="'.$modx->config['base_url'].'assets/plugins/editarea/ea_functions.js"></script>');
+			foreach($elements as $element) {
+				$e->output('<script type="text/javascript">initEditArea("'.$element.'", "'.$modx->config['manager_language'].'", "html")</script>');
+			}
+		}		
+		break;
+
+	case "OnChunkFormPrerender":
+		global $which_editor;
+		$which_editor = 'EditArea';
+		break;
+
+	case "OnSnipFormRender":
+	case "OnPluginFormRender":	
+		$e->output('<script type="text/javascript" src="'.$modx->config['base_url'].'assets/plugins/editarea/edit_area/edit_area_full.js"></script>');
+		$e->output('<script type="text/javascript" src="'.$modx->config['base_url'].'assets/plugins/editarea/ea_functions.js"></script>');
+		$e->output('<script type="text/javascript">initEditArea("post", "'.$modx->config['manager_language'].'", "php")</script>');
+		break;
+		
+	case "OnTempFormRender":
+		$e->output('<script type="text/javascript" src="'.$modx->config['base_url'].'assets/plugins/editarea/edit_area/edit_area_full.js"></script>');
+		$e->output('<script type="text/javascript" src="'.$modx->config['base_url'].'assets/plugins/editarea/ea_functions.js"></script>');
+		$e->output('<script type="text/javascript">initEditArea("post", "'.$modx->config['manager_language'].'", "html")</script>');
+		break;
+	default :
+		return; // stop here - this is very important. 
+		break; 
+}

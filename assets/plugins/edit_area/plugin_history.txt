@@ -1,0 +1,88 @@
+@history
+	[Gildas      - 0.1.1   - 26/10/06] Create from CodePress plugin based on an original idea of pixelchutes
+	[Gildas      - 0.1.1   - 26/10/06] Change edit_area location from /manager/media to /assets/plugins
+	[Gildas      - 0.1.1   - 26/10/06] Change default font size to a smaller one : 9pt
+	[Gildas      - 0.1.1   - 26/10/06] Update Traces and correct invalid test ;-) 
+	[Gildas      - 0.1.2   - 27/10/06] Change algorithm for New Documents and Links support
+	[Gildas      - 0.1.2   - 27/10/06] Support for BottomButtonBar is native. Thanks to EditArea ;-)
+	[Gildas      - 0.1.2   - 27/10/06] Add an handler for changeRTE()
+	[pixelchutes - 0.1.3   - 02/11/06] Update editAreaLoader.init
+	[Gildas      - 0.1.3   - 08/11/06] Tested with EditArea 0.6.1 (2006-11-03) - OK
+	[Gildas      - 0.1.3   - 08/11/06] Add installation steps
+	[Gildas      - 0.1.3   - 08/11/06] Add support for EditArea Debug mode (cf. $debug)
+	[Gildas      - 0.1.4   - 13/11/06] Add a little hack to support Prototype.js (Thanks to prototypify.js)
+	[Gildas      - 0.1.4   - 13/11/06] Remove reference to document.mutate in onChangeEditArea()
+	[Gildas      - 0.1.4   - 16/11/06] Make some tests after Prototype.js was replaced by Mootools (Rev 2017)
+	[Gildas      - 0.1.5   - 20/11/06] Tested with EditArea 0.6.2 (2006-11-20) - OK
+	[Gildas      - 0.1.5   - 20/11/06] EditArea is now compatible with "Prototype" (1.5) and "Mootools" (release 83)
+	[Gildas      - 0.1.6   - 21/11/06] Add the ability to save position. Helpful for "Continue Editing"
+	[Gildas      - 0.1.7   - 10/12/06] Secure $okey 
+	[Gildas      - 0.1.7   - 10/12/06] Throw a warning in case of an undefined event
+	[Gildas      - 0.1.7   - 10/12/06] Optimize save/restorePosition
+
+	[pixelchutes - 0.2 RC1 - 07/01/07] Upgraded/Tested with EditArea 0.6.3.1
+	[pixelchutes - 0.2 RC1 - 07/01/07] Modified JS to update recommended settings, as well as disable incompatible features of EditArea/MODx Manager, partially do to "frames"
+	[Gildas      - 0.1.7   - 10/01/07] Add support for CSS, JS & XML syntax in documents (cf. contentType)
+	[pixelchutes - 0.2 RC2 - 11/01/07] Upgraded/Tested with EditArea 0.6.4
+	[pixelchutes - 0.2 RC2 - 11/01/07] Added To-Dos from MODx forums
+	[pixelchutes - 0.2 RC2 - 11/01/07] Leveraged $ selector in place of getElementById
+	[pixelchutes - 0.2 RC2 - 11/01/07] Added EditArea ID ($eaid variable) so only have to declare EditArea ID name once
+	[pixelchutes - 0.2 RC2 - 11/01/07] Updated plugin code: Revised install instructions, updated/arranged JS, english language corrections, etc
+	[Gildas      - 0.2 RC3 - 12/01/07] Merge 0.2 RC2 (pixelchutes) with 0.1.7 (Gildas)
+	[Gildas      - 0.2 RC3 - 12/01/07] Add allow_resize:, replace_tab_by_spaces: & min_height: Configuration options
+	[Gildas      - 0.2 RC3 - 12/01/07] Add an embedded RegSyntax for TXT files
+	[Gildas      - 0.2 RC3 - 12/01/07] Add support for EditArea in FileManager (Need a little hack in footer.inc.php. See @install)
+	[Gildas      - 0.2 RC3 - 12/01/07] Update @todo & @bugs
+	[Gildas      - 0.2 RC4 - 21/01/07] Comment the first PHP tags and remove the Last one for MODx plugins easy cut &paste
+	[Gildas      - 0.2 RC4 - 21/01/07] Upgraded/Tested with EditArea 0.6.5.1 - FullScreen is now quite perfect...
+	[Gildas      - 0.2 RC4 - 23/01/07] Open a private SVN for cooperative development
+	[Gildas      - 0.2 RC4 - 23/01/07] Add EditArea 0.6.5.1 to SVN ensure consistency and so change JS location
+	[Gildas      - 0.2 RC4 - 23/01/07] Change MODx CSS "on the fly" to "bypass" the z-index problem with the active tab
+	[pixelchutes - 0.2 RC4 - 24/01/07] Updated plugin code, moving things like to do/history/notes/install into the readme and corresponding external files (plugin/core broken out)
+	[pixelchutes - 0.2 RC4 - 25/01/07] Added "modx_functions.js" and the ability to 'Save' documents directly from the EditArea toolbar.
+	[Gildas      - 0.2 RC4 - 20/02/07] Update language selection algorithm (cf. http://modxcms.com/forums/index.php/topic,10689.msg81702.html#msg81702)
+	[Gildas      - 0.2 RC4 - 21/02/07] Add support for a MODx Plugin
+	[Gildas      - 0.2 RC4 - 21/02/07] Replace "modx_functions.js" by "plugin/modx/modx.js"
+	[Gildas      - 0.2 RC4 - 21/02/07] Add support for Ctrl+S hotkey: "Save"
+
+	[pixelchutes - 0.3     - 22/02/07] Updated Ctrl+S event to disable "Save As" dialog in Firefox
+	[pixelchutes - 0.3     - 22/02/07] Added Plugin configuration parameters. No longer requires "code edits" to configure EditArea options
+	[pixelchutes - 0.3     - 22/02/07] Published official 0.3 (Rev.22)!
+	[Gildas      - 0.3     - 23/02/07] Checked IE6 problem where warning were throw in case of PHP undefined variable !!!
+	[Gildas      - 0.3     - 23/02/07] Removed specific "Debug mode" ($debug) where EditArea plugin doesn't use EditArea ;)
+	[Gildas      - 0.3     - 23/02/07] Added default plugin configuration to prevent installation error...
+	[Gildas      - 0.3     - 23/02/07] Uncommented REGEXPS section php.js (Thanks to TobyL : http://modxcms.com/forums/index.php/topic,10689.msg82482.html#msg82482)
+	[Gildas      - 0.3     - 25/02/07] Start search on ENTER in the Find dialog (FF & IE)
+	[pixelchutes - 0.3     - 25/02/07] Updated some documentation, included EditArea logo, and published recent commits to repository (Rev.26)
+	[Gildas      - 0.3     - 06/03/07] Add a filter for CTRL + TAB event in FF : http://modxcms.com/forums/index.php/topic,10689.msg84600.html#msg84600
+
+	[Gildas      - 0.3.1   - 02/04/07] Add a filter for CTRL + H event in IE : http://modxcms.com/forums/index.php?topic=10689.msg89234#msg89234
+
+	[Gildas      - 0.3.2   - 12/04/07] Upgraded/Tested with EditArea 0.6.7
+	[Gildas      - 0.3.2   - 12/04/07] Add support for edit_area_compressor.php
+	[Gildas      - 0.3.2   - 12/04/07] Add support for the new "syntax_selection" plugin
+	[Gildas      - 0.3.2   - 12/04/07] Add support for file editing in the FileManager (Need a little hack. See README.txt)
+	[pixelchutes - 0.3.2   - 22/05/07] Updated documentation and revision/version numbers to prepare for repository release.
+	
+	[Gildas      - 0.3.2.1 - 10/12/07] Add support for 'application/xml' and 'application/xhtml+xml', and updated SQL/JS regex syntax files since EA 0.7.0.2
+
+	[pixelchutes - 0.3.3   - 12/12/07] Updated edit_area core files to the complete 0.7.0.2 package, including documentation and examples
+	[pixelchutes - 0.3.3   - 12/12/07] Fixed bug with the compressor paramter (and default value) that was causing edit_area_compressor.php to load even when disabled
+	[pixelchutes - 0.3.3   - 12/12/07] Added catchunload parameter to optionally enable a try/catch for EA's delete_instance() unload bugs [getDocumentById] (confirmed bug in FF2/Win)
+	[pixelchutes - 0.3.3   - 12/12/07] Change MODx CSS "on the fly" to "bypass" the IE bug in full screen mode (IE shows div.sectionBody elements on top of the editor, confirmed bug in IE6&7/Win) 
+	[pixelchutes - 0.3.3   - 12/12/07] Updated documentation, bugs, and history files to prepare for repository release.
+
+	[pixelchutes - 0.4.0   - 7/24/2008] Updated edit_area core files to the complete 0.7.1.3 package (0.7.1 branch => 0.4.0), including documentation and examples
+	[pixelchutes - 0.4.0   - 7/24/2008] Updated documentation, bugs, and history files to prepare for repository release.
+
+	[pixelchutes - 0.5.0   - 4/11/2009] Updated edit_area core files to the complete 0.8.0.0 package (0.8.0 branch => 0.5.0), including documentation and examples
+	[pixelchutes - 0.5.0   - 4/11/2009] Enabled Word Wrap support (by default)
+	[pixelchutes - 0.5.0   - 4/11/2009] Confirmed new highlight functionality for Mac/Win Firefox (Improved contrast for text selections)
+	[pixelchutes - 0.5.0   - 4/11/2009] Updated documentation, bugs, and history files to prepare for repository release.
+	
+	[pixelchutes - 0.5.1   - 8/6/2009] Updated edit_area core files to the complete 0.8.1.1 package (0.8.0 branch => 0.5.0), including documentation and examples
+	[pixelchutes - 0.5.1   - 8/6/2009] Updated modx.js (MODx EditArea plugin) to be compatible with MODx Evolution
+	[pixelchutes - 0.5.1   - 8/6/2009] Updated documentation, bugs, and history files to prepare for repository release. Introduced new Installer based on MODx Evolution Installer.
+
+	[pixelchutes - 0.5.2   - 3/17/2010] Updated edit_area core files to the complete 0.8.2 package, including documentation and examples
+	[pixelchutes - 0.5.2   - 3/17/2010] Updated documentation, bugs, and history files to prepare for repository release. Updated existing EditArea installer introduced with v0.5.1.
