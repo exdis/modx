@@ -88,6 +88,10 @@ function keyDown(e){
 				use=true;
 				editArea.execCommand("redo");
 				break;
+			case "s":
+		                use = true;
+		                editArea.execCommand("save");
+		                break;
 			default:
 				break;			
 		}		

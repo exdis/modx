@@ -77,18 +77,18 @@ function EditAreaLoader(){
 	t.advanced_buttons = [
 			// id, button img, command (it will try to find the translation of "id"), is_file_specific
 			['new_document', 'newdocument.gif', 'new_document', false],
-			['search', 'search.gif', 'show_search', false],
-			['go_to_line', 'go_to_line.gif', 'go_to_line', false],
-			['undo', 'undo.gif', 'undo', true],
-			['redo', 'redo.gif', 'redo', true],
-			['change_smooth_selection', 'smooth_selection.gif', 'change_smooth_selection_mode', true],
-			['reset_highlight', 'reset_highlight.gif', 'resync_highlight', true],
-			['highlight', 'highlight.gif','change_highlight', true],
-			['help', 'help.gif', 'show_help', false],
-			['save', 'save.gif', 'save', false],
+			['search', 'find.png', 'show_search', false],
+			['go_to_line', 'go_to_line.png', 'go_to_line', false],
+			['undo', 'undo.png', 'undo', true],
+			['redo', 'redo.png', 'redo', true],
+			['change_smooth_selection', 'smooth_selection.png', 'change_smooth_selection_mode', true],
+			['reset_highlight', 'reset_highlight.png', 'resync_highlight', true],
+			['highlight', 'highlight.png','change_highlight', true],
+			['help', 'help.png', 'show_help', false],
+			['save', 'save.png', 'save', false],
 			['load', 'load.gif', 'load', false],
-			['fullscreen', 'fullscreen.gif', 'toggle_full_screen', false],
-			['word_wrap', 'word_wrap.gif', 'toggle_word_wrap', true],
+			['fullscreen', 'fullscreen.png', 'toggle_full_screen', false],
+			['word_wrap', 'word_wrap.png', 'toggle_word_wrap', true],
 			['autocompletion', 'autocompletion.gif', 'toggle_autocompletion', true]
 		];
 			
@@ -648,7 +648,7 @@ EditAreaLoader.prototype ={
 				return "<br />";
 			case "|":
 		  	case "separator":
-				return '<img src="'+ t.baseURL +'images/spacer.gif" width="1" height="15" class="editAreaSeparatorLine">';
+				return '<img src="'+ t.baseURL +'images/spacer.png" width="1" height="15" class="editAreaSeparatorLine">';
 			case "select_font":
 				html= "<select id='area_font_size' onchange='javascript:editArea.execCommand(\"change_font_size\")' fileSpecific='yes'>";
 				html+="<option value='-1'>{$font_size}</option>";

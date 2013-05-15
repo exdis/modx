@@ -12,7 +12,7 @@ body, html, table, form, textarea{
 }
 
 #editor{
-	border: solid #888 1px;
+	border: solid #eaeaea 1px;
 	overflow: hidden;
 }
 
@@ -20,8 +20,8 @@ body, html, table, form, textarea{
 	z-index: 4; 
 	overflow-x: auto;
 	overflow-y: scroll;
-	border-top: solid #888 1px;
-	border-bottom: solid #888 1px;
+	border-top: solid #eaeaea 1px;
+	border-bottom: solid #eaeaea 1px;
 	position: relative;
 	clear: both;
 }
@@ -162,14 +162,16 @@ pre{
 
 /* area popup */
 .editarea_popup{
-	border: solid 1px #888888;
-	background-color: #ECE9D8; 
-	width: 250px; 
-	padding: 4px; 
+	background-color: rgb(235,235,235); 
+	box-shadow: -1px 1px 15px rgba(0,0,0,0.5);
+	-moz-box-shadow: -1px 1px 15px rgba(0,0,0,0.5);
+	-webkit-box-shadow: -1px 1px 15px rgba(0,0,0,0.5);
+	padding: 10px; 
 	position: absolute;
 	visibility: hidden; 
 	z-index: 15;
 	top: -500px;
+	color: #555;
 }
 
 .editarea_popup, .editarea_popup table{
@@ -200,35 +202,98 @@ pre{
 /* Area_search */
 div#area_search_replace{
 	/*width: 250px;*/
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+div#area_search_replace input[type=text]{
+	padding: 3px 0;
+	border-radius: 3px;
+	border: 1px solid #e0e0e0;
+	vertical-align: middle;
+	background: url(../assets/plugins/edit_area/core/edit_area/images/input-bg.gif) repeat-x top left #fff;
+}
+
+div#area_search_replace #search img{
+	cursor: pointer;
+	vertical-align: middle;
 }
 
 div#area_search_replace img{
 	border: 0;
 }
 
-div#area_search_replace div.button{
-	text-align: center;
-	line-height: 1.7em;
+div#area_search_replace .button{
+	padding: 0;
+}
+
+div#area_search_replace .button input{
+	vertical-align: middle
+}
+
+div#area_search_replace .button label{
+	
+}
+
+div#area_search_replace .button label,
+div#area_search_replace .button input{
+	cursor: pointer;
+	font-size: 10px; 
 }
 
 div#area_search_replace .button a{
 	cursor: pointer;
-	border: solid 1px #888888;
-	background-color: #DEDEDE;
+	box-shadow: 0 0 3px #999;
+	-moz-box-shadow: 0 0 3px #999;
+	-webkit-box-shadow: 0 0 3px #999;
+	background-color: #FFFFFF;
 	text-decoration: none;
-	padding: 0 2px;
-	color: #000000;	
+	padding: 5px 10px;
+	line-height: 32px;
+	color: #777;	
 	white-space: nowrap;
 }
 
-div#area_search_replace a:hover{	
+div#area_search_replace .button #replace{
+	-webkit-border-radius: 2px;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius: 2px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-radius: 2px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+div#area_search_replace .button #replaceAll{
+	-webkit-border-radius: 10px;
+	-webkit-border-top-left-radius: 2px;
+	-webkit-border-bottom-left-radius: 2px;
+	-moz-border-radius: 10px;
+	-moz-border-radius-topleft: 2px;
+	-moz-border-radius-bottomleft: 2px;
+	border-radius: 10px;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+}
+
+div#area_search_replace .button a:hover{	
 	/*border: solid 1px #888888;*/
-	background-color: #EDEDED;
+	color: #333;
+	background-color: #ffffff;
+}
+
+div#area_search_replace a:active{
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
 }
 
 div#area_search_replace  #move_area_search_replace{
 	cursor: move; 
-	border: solid 1px #888;
+	text-align: right;
 }
 
 div#area_search_replace  #close_area_search_replace{
@@ -240,13 +305,16 @@ div#area_search_replace  #close_area_search_replace{
 div#area_search_replace  #area_search_msg{
 	height: 18px; 
 	overflow: hidden; 
-	border-top: solid 1px #888; 
+	border-top: solid 1px #e0e0e0; 
 	margin-top: 3px;
 }
 
 /* area help */
 #edit_area_help{
 	width: 350px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
 
 #edit_area_help div.close_popup{
@@ -259,18 +327,25 @@ div#area_search_replace  #area_search_msg{
 	width: 100%; 
 	/*height: 21px; */
 	margin: 0; 
-	padding: 0;
-	background-color: #333;
+	padding: 0x;
+	background-color: rgb(245,245,245);
 	text-align: center;
 }
 
 .area_toolbar, .area_toolbar table{
 	font: 11px sans-serif;
+	color: #666
 }
 
 .area_toolbar img{
+	width: 22px;
+	height: 22px;
 	border: 0;
 	vertical-align: middle;
+}
+
+.area_toolbar img.editAreaSeparatorLine{
+	width: 1px;
 }
 
 .area_toolbar input{
@@ -282,10 +357,13 @@ div#area_search_replace  #area_search_msg{
     font-family: 'MS Sans Serif',sans-serif,Verdana,Arial;
     font-size: 7pt;
     font-weight: normal;
+	height: 19px;
     margin: 2px 0 0 0 ;
     padding: 0;
     vertical-align: top;
     background-color: #F0F0EE;
+	border: 1px solid #e0e0e0;
+	cursor: pointer;
 }
 
 table.statusbar{
@@ -327,6 +405,9 @@ table.statusbar{
 	margin-top: 0;
 	margin-left: 1px;
 	padding: 0;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
 }
 
 .editAreaButtonNormal {
@@ -335,21 +416,21 @@ table.statusbar{
 }
 
 .editAreaButtonOver {
-	border: 1px solid #0A246A !important;
+	border: 1px solid #fff !important;
 	cursor: pointer;
-	background-color: #B6BDD2;
+	background-color: rgb(255,255,255);
 }
 
 .editAreaButtonDown {
 	cursor: pointer;
-	border: 1px solid #0A246A !important;
-	background-color: #8592B5;
+	border: 1px solid #CCC !important;
+	background-color: #CCC;
 }
 
 .editAreaButtonSelected {
 	border: 1px solid #C0C0BB !important;
 	cursor: pointer;
-	background-color: #F4F2E8;
+	background-color: #eaeaea;
 }
 
 .editAreaButtonDisabled {
@@ -362,7 +443,6 @@ table.statusbar{
 
 .editAreaSeparatorLine {
 	margin: 1px 2px;
-	background-color: #C0C0BB;
 	width: 2px;
 	height: 18px;
 }
@@ -527,4 +607,10 @@ table.statusbar{
 {
 	font-style: italic;
 	padding: 0 3px;
+}
+
+/*  */
+
+.but{
+	cursor: pointer;
 }
