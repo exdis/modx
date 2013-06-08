@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Июн 08 2013 г., 14:37
+-- Время создания: Июн 08 2013 г., 15:02
 -- Версия сервера: 5.5.31-0ubuntu0.13.04.1
 -- Версия PHP: 5.4.9-4ubuntu2
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `modx_active_users` (
 --
 
 INSERT INTO `modx_active_users` (`internalKey`, `username`, `lasthit`, `id`, `action`, `ip`) VALUES
-(1, 'admin', 1370677041, NULL, '2', '127.0.0.1');
+(1, 'admin', 1370678537, 6, '78', '127.0.0.1');
 
 -- --------------------------------------------------------
 
@@ -162,7 +162,7 @@ CREATE TABLE IF NOT EXISTS `modx_manager_log` (
   `itemname` varchar(255) DEFAULT NULL,
   `message` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Contains a record of user interaction.' AUTO_INCREMENT=538 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Contains a record of user interaction.' AUTO_INCREMENT=542 ;
 
 --
 -- Дамп данных таблицы `modx_manager_log`
@@ -705,7 +705,11 @@ INSERT INTO `modx_manager_log` (`id`, `timestamp`, `internalKey`, `username`, `a
 (534, 1370676928, 1, 'admin', 112, '2', 'EvoGallery', 'Execute module'),
 (535, 1370676932, 1, 'admin', 76, '-', '-', 'Element management'),
 (536, 1370677030, 1, 'admin', 17, '-', '-', 'Editing settings'),
-(537, 1370677041, 1, 'admin', 30, '-', '-', 'Saving settings');
+(537, 1370677041, 1, 'admin', 30, '-', '-', 'Saving settings'),
+(538, 1370678519, 1, 'admin', 76, '-', '-', 'Element management'),
+(539, 1370678522, 1, 'admin', 78, '6', 'tilte', 'Editing Chunk (HTML Snippet)'),
+(540, 1370678537, 1, 'admin', 79, '6', '-', 'Saving Chunk (HTML Snippet)'),
+(541, 1370678537, 1, 'admin', 78, '6', 'title', 'Editing Chunk (HTML Snippet)');
 
 -- --------------------------------------------------------
 
@@ -883,7 +887,7 @@ INSERT INTO `modx_site_htmlsnippets` (`id`, `name`, `description`, `editor_type`
 (3, 'header-css', 'Подключения CSS файлов ', 0, 8, 0, '<base href="[(site_url)]" />\r\n<link href="css/styles.css" rel="stylesheet" type="text/css" />\r\n<link href="css/lightbox.css" rel="stylesheet" type="text/css" />\r\n<link href="css/nivo-slider.css" rel="stylesheet" type="text/css" />\r\n<link rel="icon" href="images/favicon.ico" type="image/vnd.microsoft.icon" />', 0),
 (4, 'header-js', 'Подключения JavaScript', 0, 8, 0, '<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>', 0),
 (5, 'header-meta', 'header-meta', 0, 8, 0, '<title>{{title}}</title>\r\n<base href="[(site_url)]"  />\r\n<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />\r\n<meta name="Keywords" content="[*meta-keywords*]" />\r\n<meta name="description" content="[*meta-description*]" />', 0),
-(6, 'tilte', 'Заголовок страниц', 0, 10, 0, '[*longtitle:ne=``:then=`[*longtitle*]`:else=`[*pagetitle*]`*]', 0),
+(6, 'title', 'Заголовок страниц', 0, 10, 0, '[*longtitle:ne=``:then=`[*longtitle*]`:else=`[*pagetitle*]`*] | [(site_name)]', 0),
 (7, 'title-h1', '', 0, 0, 0, '[*description:ne=``:then=`[*description*]`:else=`[*pagetitle*]`*]', 0);
 
 -- --------------------------------------------------------
