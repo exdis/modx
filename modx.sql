@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Июн 08 2013 г., 15:02
+-- Время создания: Июн 08 2013 г., 15:17
 -- Версия сервера: 5.5.31-0ubuntu0.13.04.1
 -- Версия PHP: 5.4.9-4ubuntu2
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `modx_active_users` (
 --
 
 INSERT INTO `modx_active_users` (`internalKey`, `username`, `lasthit`, `id`, `action`, `ip`) VALUES
-(1, 'admin', 1370678537, 6, '78', '127.0.0.1');
+(1, 'admin', 1370679433, 1, '78', '127.0.0.1');
 
 -- --------------------------------------------------------
 
@@ -162,7 +162,7 @@ CREATE TABLE IF NOT EXISTS `modx_manager_log` (
   `itemname` varchar(255) DEFAULT NULL,
   `message` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Contains a record of user interaction.' AUTO_INCREMENT=542 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='Contains a record of user interaction.' AUTO_INCREMENT=557 ;
 
 --
 -- Дамп данных таблицы `modx_manager_log`
@@ -709,7 +709,22 @@ INSERT INTO `modx_manager_log` (`id`, `timestamp`, `internalKey`, `username`, `a
 (538, 1370678519, 1, 'admin', 76, '-', '-', 'Element management'),
 (539, 1370678522, 1, 'admin', 78, '6', 'tilte', 'Editing Chunk (HTML Snippet)'),
 (540, 1370678537, 1, 'admin', 79, '6', '-', 'Saving Chunk (HTML Snippet)'),
-(541, 1370678537, 1, 'admin', 78, '6', 'title', 'Editing Chunk (HTML Snippet)');
+(541, 1370678537, 1, 'admin', 78, '6', 'title', 'Editing Chunk (HTML Snippet)'),
+(542, 1370678660, 1, 'admin', 76, '-', '-', 'Element management'),
+(543, 1370678663, 1, 'admin', 16, '3', 'Главная страница', 'Editing template'),
+(544, 1370678832, 1, 'admin', 20, '3', '-', 'Saving template'),
+(545, 1370678832, 1, 'admin', 16, '3', 'Главная страница', 'Editing template'),
+(546, 1370678842, 1, 'admin', 20, '3', '-', 'Saving template'),
+(547, 1370678842, 1, 'admin', 16, '3', 'Главная страница', 'Editing template'),
+(548, 1370678860, 1, 'admin', 26, '-', '-', 'Refreshing site'),
+(549, 1370678870, 1, 'admin', 76, '-', '-', 'Element management'),
+(550, 1370678872, 1, 'admin', 16, '3', 'Главная страница', 'Editing template'),
+(551, 1370678900, 1, 'admin', 20, '3', '-', 'Saving template'),
+(552, 1370678900, 1, 'admin', 16, '3', 'Главная страница', 'Editing template'),
+(553, 1370679425, 1, 'admin', 76, '-', '-', 'Element management'),
+(554, 1370679428, 1, 'admin', 78, '1', 'mm_demo_rules', 'Editing Chunk (HTML Snippet)'),
+(555, 1370679433, 1, 'admin', 79, '1', '-', 'Saving Chunk (HTML Snippet)'),
+(556, 1370679433, 1, 'admin', 78, '1', 'mm_demo_rules', 'Editing Chunk (HTML Snippet)');
 
 -- --------------------------------------------------------
 
@@ -883,7 +898,7 @@ CREATE TABLE IF NOT EXISTS `modx_site_htmlsnippets` (
 --
 
 INSERT INTO `modx_site_htmlsnippets` (`id`, `name`, `description`, `editor_type`, `category`, `cache_type`, `snippet`, `locked`) VALUES
-(1, 'mm_demo_rules', 'Default ManagerManager rules. Should be modified for your own sites.', 0, 8, 0, '// For everyone\r\nmm_default(''pub_date'');\r\nmm_default(''hide_menu'',true);\r\n\r\nmm_renameField(''template'',''Тип ресурса'');\r\nmm_changeFieldHelp(''template'', ''Выберите тип ресурса, в зависимости от типа изменяется его отображение'');\r\n\r\nmm_renameField(''longtitle'',''Заголовок title'');\r\n\r\nmm_renameField(''description'',''Заголовок h1'');\r\nmm_changeFieldHelp(''description'', ''Выводит на странице заголовок h1'');\r\n\r\nmm_widget_showimagetvs(); // Always give a preview of Image TVs\r\n\r\n//mm_hideFields(''link_attributes'');\r\n//mm_hideFields(''description'');\r\n//mm_hideFields(''introtext'');\r\n//mm_hideFields(''template'');\r\n//mm_hideFields(''longtitle'');\r\n//mm_hideFields(''alias'');\r\n//mm_hideFields(''content'');\r\n//mm_hideFields(''menutitle'');\r\n\r\n// Перекидываем SEO\r\nmm_createTab(''SEO'', ''seo'', '''' );\r\nmm_moveFieldsToTab(''description,longtitle,meta-keywords,meta-description,seoOverride'', ''seo'', '''');\r\n\r\n// То, что нужно только админу\r\n//mm_widget_accessdenied(''36,69,26,30,34,43,44,50,63,75,81,84'',''<span>Доступ закрыт</span>Доступ к этому документу закрыт из соображений администратора.'',''!1'');\r\n\r\nmm_widget_showimagetvs(); // Always give a preview of Image TVs\r\n\r\n//EvoGallery\r\nmm_widget_evogallery(2, ''Фотографии'', '''', ''3'');', 0),
+(1, 'mm_demo_rules', 'Default ManagerManager rules. Should be modified for your own sites.', 0, 8, 0, '// For everyone\r\nmm_default(''pub_date'');\r\nmm_default(''hide_menu'',false);\r\n\r\nmm_renameField(''template'',''Тип ресурса'');\r\nmm_changeFieldHelp(''template'', ''Выберите тип ресурса, в зависимости от типа изменяется его отображение'');\r\n\r\nmm_renameField(''longtitle'',''Заголовок title'');\r\n\r\nmm_renameField(''description'',''Заголовок h1'');\r\nmm_changeFieldHelp(''description'', ''Выводит на странице заголовок h1'');\r\n\r\nmm_widget_showimagetvs(); // Always give a preview of Image TVs\r\n\r\n//mm_hideFields(''link_attributes'');\r\n//mm_hideFields(''description'');\r\n//mm_hideFields(''introtext'');\r\n//mm_hideFields(''template'');\r\n//mm_hideFields(''longtitle'');\r\n//mm_hideFields(''alias'');\r\n//mm_hideFields(''content'');\r\n//mm_hideFields(''menutitle'');\r\n\r\n// Перекидываем SEO\r\nmm_createTab(''SEO'', ''seo'', '''' );\r\nmm_moveFieldsToTab(''description,longtitle,meta-keywords,meta-description,seoOverride'', ''seo'', '''');\r\n\r\n// То, что нужно только админу\r\n//mm_widget_accessdenied(''36,69,26,30,34,43,44,50,63,75,81,84'',''<span>Доступ закрыт</span>Доступ к этому документу закрыт из соображений администратора.'',''!1'');\r\n\r\nmm_widget_showimagetvs(); // Always give a preview of Image TVs\r\n\r\n//EvoGallery\r\nmm_widget_evogallery(2, ''Фотографии'', '''', ''3'');', 0),
 (3, 'header-css', 'Подключения CSS файлов ', 0, 8, 0, '<base href="[(site_url)]" />\r\n<link href="css/styles.css" rel="stylesheet" type="text/css" />\r\n<link href="css/lightbox.css" rel="stylesheet" type="text/css" />\r\n<link href="css/nivo-slider.css" rel="stylesheet" type="text/css" />\r\n<link rel="icon" href="images/favicon.ico" type="image/vnd.microsoft.icon" />', 0),
 (4, 'header-js', 'Подключения JavaScript', 0, 8, 0, '<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>', 0),
 (5, 'header-meta', 'header-meta', 0, 8, 0, '<title>{{title}}</title>\r\n<base href="[(site_url)]"  />\r\n<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />\r\n<meta name="Keywords" content="[*meta-keywords*]" />\r\n<meta name="description" content="[*meta-description*]" />', 0),
@@ -1145,7 +1160,7 @@ CREATE TABLE IF NOT EXISTS `modx_site_templates` (
 --
 
 INSERT INTO `modx_site_templates` (`id`, `templatename`, `description`, `editor_type`, `category`, `icon`, `template_type`, `content`, `locked`) VALUES
-(3, 'Главная страница', 'Шаблон главной страницы', 0, 9, '', 0, '<!doctype html>\r\n<html lang="ru">\r\n<head>\r\n	{{header-meta}}\r\n        {{header-css}}\r\n        {{header-js}} \r\n</head>\r\n<body>\r\n	[*content*]	\r\n</body>\r\n</html>', 0);
+(3, 'Главная страница', 'Шаблон главной страницы', 0, 9, '', 0, '<!doctype html>\r\n<html lang="ru">\r\n<head>\r\n	{{header-meta}}\r\n        {{header-css}}\r\n        {{header-js}} \r\n</head>\r\n<body>\r\n	[*content*]\r\n</body>\r\n</html>', 0);
 
 -- --------------------------------------------------------
 
