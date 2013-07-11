@@ -22,8 +22,8 @@
 if(($_GET['editor'] == 'tinymce3' || $_GET['editor'] == 'tinymce') && $_GET['editorpath'])
 	$editorPath = htmlspecialchars($_GET['editorpath'], ENT_QUOTES);
 ?>
-		<script type="text/javascript" src="<?php echo $editorPath; ?>/jscripts/tiny_mce/tiny_mce_popup.js"></script>
-		<script type="text/javascript" src="<?php echo $editorPath; ?>/tinymce.modxfb.js"></script>
+		<script type="text/javascript" src="<?php echo $editorPath; ?>tiny_mce/tiny_mce_popup.js"></script>
+		<script type="text/javascript" src="<?php echo $editorPath; ?>tinymce.modxfb.js"></script>
 
 		<!-- elFinder initialization (REQUIRED) -->
 		<script type="text/javascript" charset="utf-8">
