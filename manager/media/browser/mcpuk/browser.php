@@ -17,7 +17,7 @@
 		<script type="text/javascript" src="js/elfinder.min.js"></script>
 
 		<!-- elFinder translation (OPTIONAL) -->
-		<script type="text/javascript" src="js/i18n/elfinder.ru.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/i18n/elfinder.ru.js"></script>
 <?php
 if(($_GET['editor'] == 'tinymce3' || $_GET['editor'] == 'tinymce') && $_GET['editorpath'])
 	$editorPath = htmlspecialchars($_GET['editorpath'], ENT_QUOTES);
