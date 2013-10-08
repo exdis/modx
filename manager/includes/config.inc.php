@@ -1,6 +1,6 @@
 <?php
 /**
- * MODx Configuration file
+ * MODX Configuration file
  */
 $database_type = 'mysql';
 $database_server = 'localhost';
@@ -12,12 +12,12 @@ $dbase = '`modx`';
 $table_prefix = 'modx_';
 error_reporting(E_ALL & ~E_NOTICE);
 
-$lastInstallTime = 1367308035;
+$lastInstallTime = 1381209557;
 
-$site_sessionname = 'SN517f770345f74';
+$site_sessionname = 'SN525395d542c5e';
 $https_port = '443';
 
-if(!defined("MGR_DIR")) define("MGR_DIR", "manager");
+define('MGR_DIR', 'manager');
 
 // automatically assign base_path and base_url
 if(empty($base_path)||empty($base_url)||$_REQUEST['base_path']||$_REQUEST['base_url']) {
@@ -27,15 +27,24 @@ if(empty($base_path)||empty($base_url)||$_REQUEST['base_path']||$_REQUEST['base_
     } else {
         $script_name= $_SERVER['SCRIPT_NAME'];
     }
-    $a= explode("/manager", str_replace("\\", "/", dirname($script_name)));
+    $script_name = str_replace("\\", "/", dirname($script_name));
+    if(strpos($script_name,MGR_DIR)!==false)
+        $separator = MGR_DIR;
+    elseif(strpos($script_name,'/assets/')!==false)
+        $separator = 'assets';
+    else $separator = '';
+    
+    if($separator!=='') $a= explode('/'.$separator, $script_name);
+    else $a = array($script_name);
+    
     if (count($a) > 1)
         array_pop($a);
-    $url= implode("manager", $a);
+    $url= implode($separator, $a);
     reset($a);
-    $a= explode("manager", str_replace("\\", "/", dirname(__FILE__)));
+    $a= explode(MGR_DIR, str_replace("\\", "/", dirname(__FILE__)));
     if (count($a) > 1)
         array_pop($a);
-    $pth= implode("manager", $a);
+    $pth= implode(MGR_DIR, $a);
     unset ($a);
     $base_url= $url . (substr($url, -1) != "/" ? "/" : "");
     $base_path= $pth . (substr($pth, -1) != "/" && substr($pth, -1) != "\\" ? "/" : "");
@@ -51,8 +60,8 @@ $site_url .= $base_url;
 if (!defined('MODX_BASE_PATH')) define('MODX_BASE_PATH', $base_path);
 if (!defined('MODX_BASE_URL')) define('MODX_BASE_URL', $base_url);
 if (!defined('MODX_SITE_URL')) define('MODX_SITE_URL', $site_url);
-if (!defined('MODX_MANAGER_PATH')) define('MODX_MANAGER_PATH', $base_path.'manager/');
-if (!defined('MODX_MANAGER_URL')) define('MODX_MANAGER_URL', $site_url.'manager/');
+if (!defined('MODX_MANAGER_PATH')) define('MODX_MANAGER_PATH', $base_path.MGR_DIR.'/');
+if (!defined('MODX_MANAGER_URL')) define('MODX_MANAGER_URL', $site_url.MGR_DIR.'/');
 
 // start cms session
 if(!function_exists('startCMSSession')) {
