@@ -242,7 +242,7 @@ foreach ( $crumbs as $c )
     else
     // Make a span instead of a link
     {
-       $pretemplateCrumb .= '<span class="'.$crumbClass.'">'.$text.'</span>';
+       $pretemplateCrumb .= '<span zalupa class="'.$crumbClass.'">'.$text.'</span>';
     }
 
     // Add crumb to pretemplate crumb array
